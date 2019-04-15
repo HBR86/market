@@ -7,17 +7,32 @@ import java.util.Set;
 
 public class Basket implements Visitor {
 
+	/**
+	 * représente la liste des produits ajoutés au panier
+	 */
 	private Set<Product> products = new HashSet<>();
-	
-	boolean addProduct(Product product){
+
+	/**
+	 * ajoute un produit au panier
+	 * 
+	 * @param product
+	 * @return <b>true</b> si le produit n'existait pas avant dans le panier
+	 *         sinon <b>false</b>
+	 */
+	boolean addProduct(Product product) {
 		return products.add(product);
 	}
-	
-	public BigDecimal calculateTotalPrice(){
+
+	/**
+	 * 
+	 * @return un decimal représentant le prix total du panier
+	 */
+	public BigDecimal calculateTotalPrice() {
 		BigDecimal totalPrice = new BigDecimal("0.00");
-		for(Product product : products){
+		for (Product product : products) {
 			totalPrice = totalPrice.add(product.accept(this));
 		}
+		// on n'a besoin que de 2 chiffres après la virgule
 		return totalPrice.setScale(2, RoundingMode.HALF_UP);
 	}
 

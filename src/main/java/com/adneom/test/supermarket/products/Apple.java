@@ -9,11 +9,15 @@ public class Apple extends AbstractProduct {
 		super(name, price, quantity);
 	}
 
+	/**
+	 * pour les pommes, 2 sont vendus au prix de un
+	 */
 	@Override
 	public BigDecimal calculatePrice() {
 		float price = quantity / 2 * unitPrice;
 		price += (quantity % 2) * unitPrice;
 		BigDecimal decimal = new BigDecimal(price);
+		// on n'a besoin que de 2 chiffres après la virgule
 		return decimal.setScale(2, RoundingMode.HALF_UP);
 	}
 
