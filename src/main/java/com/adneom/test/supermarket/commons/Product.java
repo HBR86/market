@@ -1,4 +1,4 @@
-package com.adneom.test.supermarket;
+package com.adneom.test.supermarket.commons;
 
 import java.math.BigDecimal;
 

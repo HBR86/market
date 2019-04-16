@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.adneom.test.supermarket.commons.Product;
 import com.adneom.test.supermarket.products.Apple;
 
 public class AppleTest {

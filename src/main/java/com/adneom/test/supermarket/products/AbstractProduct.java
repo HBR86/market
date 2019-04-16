@@ -3,7 +3,7 @@ package com.adneom.test.supermarket.products;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import com.adneom.test.supermarket.Product;
+import com.adneom.test.supermarket.commons.Product;
 
 /**
  * Cette classe présente une abstraction des différents types de produits. Elle
